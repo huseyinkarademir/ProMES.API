@@ -1,0 +1,6 @@
+@ProMES.API_HostAddress = http://localhost:5164
+
+GET {{ProMES.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
