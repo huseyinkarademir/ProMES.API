@@ -45,17 +45,17 @@ namespace Persistence.Services
                         {
                             ReasonType = downtime.ReasonType,
                             Reason = downtime.Reason, // Duruş açıklaması
-                            TotalDuration = downtimeDuration.TotalMinutes
+                            TotalDuration = (int)(downtimeDuration.TotalMinutes)
                         };
                     }
                     else
                     {
                         // Var olan kaydın toplam süresini güncelle
-                        workOrderModel.DowntimeDurations[downtime.ReasonType].TotalDuration += downtimeDuration.TotalMinutes;
+                        workOrderModel.DowntimeDurations[downtime.ReasonType].TotalDuration += (int)(downtimeDuration.TotalMinutes);
                     }
 
                     // İş emrinin toplam duruş süresini güncelle
-                    workOrderModel.TotalDowntimeDuration += downtimeDuration.TotalMinutes;
+                    workOrderModel.TotalDowntimeDuration += (int)(downtimeDuration.TotalMinutes);
                 }
             }
 
@@ -72,7 +72,6 @@ namespace Persistence.Services
                                         : workOrder.EndTime == null ? downtime.EndTime : (downtime.EndTime < workOrder.EndTime ? downtime.EndTime : workOrder.EndTime);
 
             return downtimeEndTime.Value - start.Value;
-
         }
     }
 }

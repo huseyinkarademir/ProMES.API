@@ -14,7 +14,7 @@ namespace Application.Common.Helpers.Mapper
                 var workOrderModel = new WorkOrderModel
                 {
                     Id = workOrder.Id,
-                    OrderNo = workOrder.OrderNo,
+                    workOrderNo = workOrder.OrderNo,
                     MachineId = workOrder.MachineId,
                     StartTime = workOrder.StartTime ?? workOrder.StartTime ?? DateTime.Now,
                     EndTime = workOrder.EndTime ?? DateTime.Now,

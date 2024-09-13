@@ -7,6 +7,6 @@
         public int ReasonType { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
-        public double Duration { get; set; } // Dakika cinsinden süresi
+        public int Duration { get; set; } // Dakika cinsinden süresi
     }
 }

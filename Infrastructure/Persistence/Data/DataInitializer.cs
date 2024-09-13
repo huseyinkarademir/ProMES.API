@@ -45,7 +45,7 @@ namespace Persistence.Data
                     Id = 5,
                     OrderNo = 1005,
                     MachineId = 1,
-                    StartTime = new DateTime(2024, 9, 11, 21, 10, 0),
+                    StartTime = new DateTime(2024, 9, 13, 20, 10, 0),
                     EndTime = null,
                 },
                 new WorkOrder
@@ -132,7 +132,7 @@ namespace Persistence.Data
                     Reason = "Bakım",
                     ReasonType = 4,
                     MachineId = 1,
-                    StartTime = new DateTime(2024, 9, 11, 22, 40, 0),
+                    StartTime = new DateTime(2024, 9, 13, 20, 40, 0),
                     EndTime = null,
                 }
             };

@@ -5,10 +5,14 @@ namespace ProMES.API.Controllers
 {
     public class WorkOrderController : BaseController
     {
-        [HttpPost("list-workOrders")]
-        public async Task<IActionResult> GetWorkOrders(GetWorkOrdersQueryRequest request)
+        [HttpPost("list-workOrders/GetWorkOrders")]
+        public async Task<IActionResult> GetWorkOrders([FromBody] GetWorkOrdersQueryRequest request, [FromHeader(Name = "X-Method-Name")] string methodName)
         {
-            return Ok(await Mediator.Send(request));
+            if (methodName == "GetWorkOrders")
+            {
+                return Ok(await Mediator.Send(request));
+            }
+            return BadRequest("Metod ismi yanlış");
         }
     }
 }
